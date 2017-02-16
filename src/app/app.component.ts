@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Hero{//一个实体类
-  id: number;
-  name: string;
-}
+import {Hero} from "./hero";//导入用到的Hero类
 
 const HEROES: Hero[] = [//由Hero类的实例构成的数组
   { id: 11, name: 'Mr. Nice' },
@@ -29,17 +25,7 @@ const HEROES: Hero[] = [//由Hero类的实例构成的数组
         <span class="badge">{{ hero.id }}</span>{{ hero.name }}
       </li>
     </ul>
-    <div *ngIf="selectedHero"> <!--ngIf-->
-      <h1>{{ title }}</h1>
-      <h2>{{ selectedHero.name }} details!</h2>
-      <div>
-        <label>id: </label>{{ selectedHero.id }}
-      </div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)] = "selectedHero.name" placeholder="name"> <!--双向绑定-->
-      </div>
-    </div>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail> <!--来自hero-detail组件——绑定——目标属性声明为输入属性-->
   `,
   styles: [` <!--样式-->
   .selected {
