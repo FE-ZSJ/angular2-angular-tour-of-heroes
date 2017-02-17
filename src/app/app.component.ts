@@ -1,18 +1,7 @@
-import { Component } from '@angular/core';
-import {Hero} from "./hero";//导入用到的Hero类
+import { Component, OnInit } from '@angular/core';// ngOnInit 生命周期钩子
 
-const HEROES: Hero[] = [//由Hero类的实例构成的数组
-  { id: 11, name: 'Mr. Nice' },
-  { id: 12, name: 'Narco' },
-  { id: 13, name: 'Bombasto' },
-  { id: 14, name: 'Celeritas' },
-  { id: 15, name: 'Magneta' },
-  { id: 16, name: 'RubberMan' },
-  { id: 17, name: 'Dynama' },
-  { id: 18, name: 'Dr IQ' },
-  { id: 19, name: 'Magma' },
-  { id: 20, name: 'Tornado' }
-];
+import {Hero} from "./hero";//导入用到的Hero类
+import { HeroService } from "./hero.service";
 
 @Component({ //装饰器
   selector: 'my-app',
@@ -75,13 +64,28 @@ const HEROES: Hero[] = [//由Hero类的实例构成的数组
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
   }
-`]
+`],
+  providers: [HeroService]//HeroService提供商
 })
 
-export class AppComponent {//组件
+export class AppComponent implements OnInit{//组件
   title = 'Tour of Heroes';
   selectedHero: Hero;
-  heroes = HEROES;
+  heroes: Hero[];
+
+  constructor(private heroService: HeroService) {//构造函数——私有属性标记为注入HeroService的靶点
+
+  }//简单的初始化
+
+  getHeroes(): void {//包装成专门的方法
+    // this.heroes = this.heroService.getHeroes(); //调用此服务并获得数据
+    // this.heroService.getHeroes().then(heroes => this.heroes = heroes); //基于Promise，解决时获取数据
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes); //模拟慢速连接
+  }
+
+  ngOnInit(): void {//用来介入组件生命周期的几个关键时间点：刚创建时、每次变化时，以及最终被销毁时
+    this.getHeroes();
+  }
 
   onSelect(hero: Hero): void {//点击事件
     this.selectedHero = hero;
