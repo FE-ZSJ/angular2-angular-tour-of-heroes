@@ -1,0 +1,12 @@
+<div *ngIf="hero"> <!--ngIf-->
+  <h1>{{ title }}</h1>
+  <h2>{{ hero.name }} details!</h2>
+  <div>
+    <label>id: </label>{{ hero.id }}
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)] = "hero.name" placeholder="name"> <!--双向绑定-->
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

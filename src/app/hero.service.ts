@@ -17,6 +17,11 @@ export class HeroService {//该服务可以从任何地方获取数据，随时�
       setTimeout(resolve, 2000)) // delay 2 seconds
       .then(() => this.getHeroes());
   }
+
+  getHero(id: number): Promise<Hero[]> {//用来通过id从getHeros过滤英雄列表：
+    return this.getHeroes()
+               .then(heroes => heroes.find(hero => hero.id === id));
+  }
 }
 
 
