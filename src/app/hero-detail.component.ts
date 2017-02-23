@@ -13,10 +13,11 @@ import {Hero} from "./hero";
 @Component({//创建元数据
   moduleId: module.id,
   selector: 'my-hero-detail',//选择器的名字用来标识组件的元素
-  templateUrl: 'hero-detail.component.html'
+  templateUrl: 'hero-detail.component.html',
+  styleUrls: [ 'hero-detail.component.css' ]
 })
 export class HeroDetailComponent implements OnInit{//导出类以便其他组件使用
-  @Input()    //用导入的@Input装饰器给hero属性添加注解，声明成输入属性
+  // @Input()    //用导入的@Input装饰器给hero属性添加注解，声明成输入属性
   hero: Hero[];   //Hero实体类型来自于hero.ts
 
   constructor(//注入服务到构造函数中，并保存为私有变量

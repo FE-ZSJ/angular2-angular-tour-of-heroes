@@ -9,7 +9,8 @@ import { HeroService } from './hero.service';
 @Component({
   moduleId: module.id,//相对模板加载templateUrl
   selector: 'my-dashboard',
-  templateUrl: 'dashboard.component.html'//指向新的模板文件
+  templateUrl: 'dashboard.component.html',//指向新的模板文件
+  styleUrls: [ 'dashboard.component.css' ]
 })
 
 export class DashBoardComponent implements OnInit{
