@@ -8,16 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+//为 Angular 编译器设置整个应用的关键配置
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
-var router_1 = require('@angular/router');
 var app_component_1 = require('./app.component');
 var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_service_1 = require("./hero.service");
 //导入自己写好的组件
+var app_routing_module_1 = require('./app-routing.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,25 +27,7 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                router_1.RouterModule.forRoot([
-                    {
-                        path: 'heroes',
-                        component: heroes_component_1.HeroesComponent //导航到此路由时，需要创建的组件
-                    },
-                    {
-                        path: 'dashboard',
-                        component: dashboard_component_1.DashBoardComponent
-                    },
-                    {
-                        path: 'detail/:id',
-                        component: hero_detail_component_1.HeroDetailComponent //英雄详情的路由配置
-                    },
-                    {
-                        path: '',
-                        redirectTo: '/dashboard',
-                        pathMatch: 'full'
-                    }
-                ])
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
