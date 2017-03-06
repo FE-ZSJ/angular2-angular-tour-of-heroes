@@ -20,11 +20,16 @@ export class HeroService {//该服务可以从任何地方获取数据，随时�
     return this.http.get(this.heroesUrl)
       .toPromise()
       .then(response => response.json().data as Hero[])
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
   // getHeroes(): Promise<Hero[]> {//返回模拟的数据,立即解决的Promise的方式
   //   return Promise.resolve(HEROES);
   // } //stub——桩方法
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred',error);// for demo purposes only
+    return Promise.reject(error.message || error);
+  }
 
   getHeroesSlowly(): Promise<Hero[]> {//模拟慢速连接——承诺会在提供模拟数据之前等待两秒钟
     return new Promise<Hero[]>(resolve =>
