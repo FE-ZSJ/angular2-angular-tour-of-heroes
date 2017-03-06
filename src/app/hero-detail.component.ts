@@ -18,7 +18,7 @@ import {Hero} from "./hero";
 })
 export class HeroDetailComponent implements OnInit{//导出类以便其他组件使用
   // @Input()    //用导入的@Input装饰器给hero属性添加注解，声明成输入属性
-  hero: Hero[];   //Hero实体类型来自于hero.ts
+  hero: Hero;   //Hero实体类型来自于hero.ts
 
   constructor(//注入服务到构造函数中，并保存为私有变量
     private heroService: HeroService,
@@ -34,5 +34,10 @@ export class HeroDetailComponent implements OnInit{//导出类以便其他组件
 
   goBack(): void {// 利用浏览器的历史堆栈，导航到上一步
       this.location.back();
+  }
+
+  save(): void {
+      this.heroService.update(this.hero)
+        .then(() => this.goBack());
   }
 }
