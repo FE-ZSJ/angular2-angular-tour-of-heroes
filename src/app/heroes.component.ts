@@ -39,4 +39,14 @@ export class HeroesComponent implements OnInit{//组件
   gotoDetail(): void {//链接参数数组 — 路径和路由参数 — 传递到router.navigate
     this.Router.navigate(['./detail', this.selectedHero.id]);
   }
+
+  add(name: string):void {
+    name = name.trim();
+    if(!name){ return; }
+    this.heroService.create(name)//新建一个英雄并放入英雄列表
+      .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
 }

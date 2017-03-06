@@ -57,7 +57,15 @@ export class HeroService {//该服务可以从任何地方获取数据，随时�
       .put(url, JSON.stringify(hero), {headers: this.headers})
       .toPromise()
       .then(() => hero)
-      .catch(this.handleError());
+      .catch(this.handleError);
+  }
+
+  create(name: string): Promise<Hero> {//创建新的英雄
+    return this.http
+      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data)
+      .catch(this.handleError);
   }
 }
 
