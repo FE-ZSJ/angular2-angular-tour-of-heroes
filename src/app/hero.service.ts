@@ -67,6 +67,15 @@ export class HeroService {//该服务可以从任何地方获取数据，随时�
       .then(res => res.json().data)
       .catch(this.handleError);
   }
+
+  delete(id: number): Promise<void> {//删除一个英雄
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http
+      .delete(url, {headers: this.headers})
+      .toPromise()
+      .then(() => null)
+      .catch(this.handleError);
+  }
 }
 
 

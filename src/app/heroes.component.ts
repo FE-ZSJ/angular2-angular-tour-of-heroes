@@ -40,7 +40,7 @@ export class HeroesComponent implements OnInit{//组件
     this.Router.navigate(['./detail', this.selectedHero.id]);
   }
 
-  add(name: string):void {
+  add(name: string): void {
     name = name.trim();
     if(!name){ return; }
     this.heroService.create(name)//新建一个英雄并放入英雄列表
@@ -48,5 +48,14 @@ export class HeroesComponent implements OnInit{//组件
         this.heroes.push(hero);
         this.selectedHero = null;
       });
+  }
+
+  delete(hero: Hero): void {
+    this.heroService
+      .delete(hero.id)
+      .then(() => {
+        this.heroes = this.heroes.filter(h => h!==hero);//从数组中移除被删除的英雄
+        if(this.selectedHero === hero){ this.selectedHero = null; }//如果当前选中的英雄正好是删除的英雄，则当前选中的英雄为null
+      })
   }
 }
