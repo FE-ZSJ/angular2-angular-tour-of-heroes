@@ -45,7 +45,8 @@ export class HeroService {//该服务可以从任何地方获取数据，随时�
 
   getHero(id: number): Promise<Hero> {//从服务器获取数据
     const url = `${this.heroesUrl}/${id}`;
-    return this.http.get(url)
+    return this.http
+      .get(url)
       .toPromise()
       .then(response => response.json().data as Hero[])//在 then 回调中提取出数据
       .catch(this.handleError);//catch了服务器的失败信息，并把它们传给了错误处理器
