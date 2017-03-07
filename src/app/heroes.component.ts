@@ -24,7 +24,9 @@ export class HeroesComponent implements OnInit{//组件
 
   getHeroes(): void {//包装成专门的方法
     // this.heroes = this.heroService.getHeroes(); //调用此服务并获得数据
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes); //基于Promise，解决时获取数据
+    this.heroService
+        .getHeroes()
+        .then(heroes => this.heroes = heroes); //基于Promise，解决时获取数据
     // this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes); //模拟慢速连接
   }
 

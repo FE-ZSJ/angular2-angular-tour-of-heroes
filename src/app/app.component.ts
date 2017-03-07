@@ -14,7 +14,6 @@ import { Component } from '@angular/core';
     <router-outlet></router-outlet><!--路由插座——把激活的组件显示在此-->
   `,
   styleUrls:[ 'app/app.component.css' ]
-
 })
 export class AppComponent {
   title = 'Tour of Heroes';

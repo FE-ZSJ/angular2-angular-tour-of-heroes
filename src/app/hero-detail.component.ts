@@ -1,7 +1,7 @@
 /**
  * Created by zhusujuan on 2017/2/16.
  */
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';//从ActivatedRoute服务的可观察对象params中取得id参数
 import { Location } from '@angular/common';
 
