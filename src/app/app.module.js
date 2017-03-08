@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 //为 Angular 编译器设置整个应用的关键配置
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
+var core_1 = require('@angular/core'); //从库模块中导入NgModule装饰器
+var platform_browser_1 = require('@angular/platform-browser'); //从angular库中导入angular模块
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
@@ -36,6 +36,7 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService) //InMemoryWebApiModule将Http客户端默认的后端服务 — 这是一个辅助服务，负责与远程服务器对话 — 替换成了内存 Web API服务：
             ],
+            //声明本模块中的视图类(组件、指令、管道)
             declarations: [
                 app_component_1.AppComponent,
                 heroes_component_1.HeroesComponent,
@@ -43,9 +44,12 @@ var AppModule = (function () {
                 dashboard_component_1.DashBoardComponent,
                 hero_search_component_1.HeroSearchComponent
             ],
+            // exports:[ AppComponent ],//declarations的子集，可用于其他模块的组件模板,此处不需要
+            //服务的创建者，加入全局服务列表中，可用于应用的任何部分
             providers: [
                 hero_service_1.HeroService
             ],
+            //指定应用的主视图(根组件)，其他视图的宿主，只有根模块设置
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
