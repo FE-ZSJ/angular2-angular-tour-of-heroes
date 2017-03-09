@@ -19,7 +19,7 @@ export class DashBoardComponent implements OnInit{//在类中定义组件的应�
 
   constructor(private heroService: HeroService) {}
 
-  ngOnInit(): void {//通过生命周期钩子在组件生命周期的各个时间点插入自己的操作
+  ngOnInit(): void {//通过生命周期钩子在组件生命周期的各个时间点插入自己操作
     this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1,5));
   }
