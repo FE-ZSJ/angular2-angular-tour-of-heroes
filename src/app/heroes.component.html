@@ -7,9 +7,10 @@
   <li *ngFor="let hero of heroes"
       [class.selected]="hero === selectedHero"
       (click)="onSelect(hero)"> <!--ngFor,属性绑定,事件-->
-    <span class="badge">{{ hero.id }}</span>
+    <span class="badge">{{ hero.id }}</span><!--插值表达式-->
     <span>{{ hero.name }}</span>
     <button (click)="delete(hero); $event.stopPropagation()">X</button>
+    <!--事件绑定——当用户点击时调用组件的delete方法-->
   </li>
 </ul>
 <div *ngIf="selectedHero">
@@ -20,3 +21,4 @@
 </div>
 <!--angular的模板语法，自定义组件-->
 <!--<my-hero-detail [hero]="selectedHero"></my-hero-detail> &lt;!&ndash;来自hero-detail组件——绑定——目标属性声明为输入属性&ndash;&gt;-->
+<!--属性绑定——将父组件的selectedHero值传到子组件的hero属性中-->
