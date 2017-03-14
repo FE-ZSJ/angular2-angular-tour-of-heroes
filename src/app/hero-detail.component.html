@@ -6,7 +6,10 @@
   </div>
   <div>
     <label>name: </label>
-    <input [(ngModel)] = "hero.name" placeholder="name"> <!--双向绑定-->
+    <input [(ngModel)] = "hero.name" placeholder="name"><!--双向绑定-->
+    <!--使用ngModel指令组合属性绑定和事件绑定的功能-->
+    <!--在双向绑定中，数据属性值通过属性绑定从组件流到输入框。-->
+    <!--用户的修改通过事件绑定流回组件，把属性值设置为最新的值。-->
   </div>
   <button (click)="goBack()">Back</button>
   <button (click)="save()">Save</button>
