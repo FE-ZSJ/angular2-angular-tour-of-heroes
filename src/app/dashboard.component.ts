@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
 
+//组件是一个带模板的指令；@Component装饰器实际上就是一个@Directive装饰器，只是扩展了一些面向模板的特性。
 @Component({
   moduleId: module.id,//相对模板加载templateUrl
   selector: 'my-dashboard',
