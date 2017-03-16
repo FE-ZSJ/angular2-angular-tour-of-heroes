@@ -1,6 +1,7 @@
 /**
  * Created by Administrator on 2017/2/22.
  */
+//组件应保持精简，提供用户体验，为数据绑定提供属性和方法，将琐事委托给服务
 //组件负责屏幕的一小块区域(视图)
 import { Component, OnInit } from '@angular/core';
 
