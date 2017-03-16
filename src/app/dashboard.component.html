@@ -1,5 +1,6 @@
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
+<div class="grid grid-pad"><!--ngFor——结构型指令-->
+  <!--通过在 DOM 中添加、移除和替换元素来修改布局-->
   <a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="col-1-4">
     <div class="module hero">
       <h4>{{ hero.name }}</h4>
