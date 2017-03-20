@@ -38,7 +38,7 @@ import { HeroService } from "./hero.service";
   //服务的创建者，加入全局服务列表中，可用于应用的任何部分
   providers: [//供每个视图使用，守卫服务
     HeroService
-  ],
+  ],//注入器为服务注册一个提供商，用来创建或返回服务，供应商可以放在根模块，也可以放在组件上
   //指定应用的主视图(根组件)，其他视图的宿主，只有根模块设置
   bootstrap: [ AppComponent ]
 })
