@@ -17,7 +17,7 @@ import { HeroService } from './hero.service';
 })
 //组件通过一些由属性和方法组成的API与视图交互
 export class DashBoardComponent implements OnInit{//在类中定义组件的应用逻辑，为视图提供支持
-  heroes: Hero[] = [] ;
+  heroes: Hero[] = [];
   //【依赖注入】
   //注入器用于维护服务实例的容器，如果请求的服务容器中没有，injector会通过供应商创建一个服务实例添加到容器中。
   //当请求的服务都被返回，angular会以这些服务为参数去调用组件的构造函数

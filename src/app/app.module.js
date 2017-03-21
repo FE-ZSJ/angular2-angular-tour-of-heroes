@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-//为 Angular 编译器设置整个应用的关键配置
+//为 Angular 编译器设置整个应用的关键配置，imports数组中应该只有NgModule类。不要放置其它类型的类。
 var core_1 = require('@angular/core'); //从库模块中导入NgModule装饰器
 var platform_browser_1 = require('@angular/platform-browser'); //从angular库中导入angular模块
 var forms_1 = require('@angular/forms');
@@ -24,6 +24,7 @@ var hero_detail_component_1 = require('./hero-detail.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_search_component_1 = require('./hero-search.component');
 var hero_service_1 = require("./hero.service");
+//标记为angular模块类(ngModule类)，接收元数据对象，告诉angular如何编译和启动应用
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49,7 +50,7 @@ var AppModule = (function () {
             providers: [
                 hero_service_1.HeroService
             ],
-            //指定应用的主视图(根组件)，其他视图的宿主，只有根模块设置
+            //指定应用的主视图(根组件)，其他视图的宿主，只有根模块设置。angular创建它并插入index.html宿主页面
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
