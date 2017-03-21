@@ -12,17 +12,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by zhusujuan on 2017/2/20.
  */
 var core_1 = require('@angular/core');
-var hero_1 = require("./hero");
+var hero1_1 = require("./hero1");
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Tour of Heroes'; //变量赋值初始化组件
         this.myhero = 'huge';
         // testHeroes = ['yangmi', 'huge', 'xiaochen', 'junkai'];//字符串数组
         this.testHeroes = [
-            new hero_1.Hero(1234, 'yangmi'),
-            new hero_1.Hero(1245, 'huge'),
-            new hero_1.Hero(1346, 'xiaochen'),
-            new hero_1.Hero(1565, 'junkai')
+            new hero1_1.Hero1(1234, 'yangmi'),
+            new hero1_1.Hero1(1245, 'huge'),
+            new hero1_1.Hero1(1346, 'xiaochen'),
+            new hero1_1.Hero1(1565, 'junkai')
         ];
         this.author = 'zhusujuan';
         this.myhero = this.testHeroes[0].detail;

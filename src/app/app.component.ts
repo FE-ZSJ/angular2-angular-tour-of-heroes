@@ -3,6 +3,7 @@
  */
 import { Component } from '@angular/core';
 import {Hero} from "./hero";
+import {Hero1} from "./hero1";
 
 @Component({
   selector: 'my-app',
@@ -29,10 +30,10 @@ export class AppComponent {
   author: string;//利用构造函数声明和初始化属性
   // testHeroes = ['yangmi', 'huge', 'xiaochen', 'junkai'];//字符串数组
   testHeroes = [
-    new Hero(1234,'yangmi'),
-    new Hero(1245,'huge'),
-    new Hero(1346,'xiaochen'),
-    new Hero(1565,'junkai')
+    new Hero1(1234,'yangmi'),
+    new Hero1(1245,'huge'),
+    new Hero1(1346,'xiaochen'),
+    new Hero1(1565,'junkai')
   ];
 
 
