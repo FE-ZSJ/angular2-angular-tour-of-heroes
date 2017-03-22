@@ -30,7 +30,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<!--\u5185\u8054\u6A21\u677F-->\n    <h1>{{ title }}</h1>  \n    <h2>my favorite hero is: {{ myhero }}</h2><!--\u63D2\u503C\u8868\u8FBE\u5F0F-->\n    <p>Heroes:</p>\n    <ul>\n      <li *ngFor=\"let hero of testHeroes\">{{ hero.detail }}</li>\n    </ul>\n    <nav>\n      <a routerLink=\"/dashboard\" routerLinkActive=\"active\">DashBoard</a>\n      <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a><!--\u8DEF\u7531\u5668\u94FE\u63A5-->\n    </nav>\n    <router-outlet></router-outlet><!--\u8DEF\u7531\u63D2\u5EA7\u2014\u2014\u628A\u6FC0\u6D3B\u7684\u7EC4\u4EF6\u663E\u793A\u5728\u6B64-->\n    <h5>author: {{ author }}</h5>\n  ",
+            template: "<!--\u5185\u8054\u6A21\u677F-->\n    <h1>{{ title }}</h1>  \n    <h2>my favorite hero is: {{ myhero }}</h2><!--\u63D2\u503C\u8868\u8FBE\u5F0F-->\n    <p>Heroes:</p>\n    <ul>\n      <li *ngFor=\"let hero of testHeroes\">{{ hero.detail }}</li>\n    </ul>\n    <p *ngIf=\"testHeroes.length > 3\">There are many heroes!</p><!--\u5C06\u5143\u7D20\u4ECEDOM\u4E2D\u6DFB\u52A0\u6216\u79FB\u9664\uFF0C\u800C\u4E0D\u662F\u9690\u85CF-->\n    <nav>\n      <a routerLink=\"/dashboard\" routerLinkActive=\"active\">DashBoard</a>\n      <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a><!--\u8DEF\u7531\u5668\u94FE\u63A5-->\n    </nav>\n    <router-outlet></router-outlet><!--\u8DEF\u7531\u63D2\u5EA7\u2014\u2014\u628A\u6FC0\u6D3B\u7684\u7EC4\u4EF6\u663E\u793A\u5728\u6B64-->\n    <h5>author: {{ author }}</h5>\n  ",
             styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])

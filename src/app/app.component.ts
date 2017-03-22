@@ -14,6 +14,7 @@ import {Hero1} from "./hero1";
     <ul>
       <li *ngFor="let hero of testHeroes">{{ hero.detail }}</li>
     </ul>
+    <p *ngIf="testHeroes.length > 3">There are many heroes!</p><!--将元素从DOM中添加或移除，而不是隐藏-->
     <nav>
       <a routerLink="/dashboard" routerLinkActive="active">DashBoard</a>
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a><!--路由器链接-->
