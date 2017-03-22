@@ -15,12 +15,17 @@ import { Component } from '@angular/core';
   <p>按键事件过滤(通过key.enter)</p>
   <input #box1 (keyup.enter)="onEnter(box1.value)">
   <p>{{ value1 }}</p>
+  
+  <p>失去焦点事件：</p>
+  <input #box2 (key.enter)="update(box2.value)" (blur)="update(box2.value)">
+  <p>{{ value2 }}</p>
 `
 })
 
 export class LoopbackComponent{
   value = '';
   value1 = '';
+  value2 = '';
 
   onkey(value: string) {//组件从视图中获取了干净的数据值
     this.value += value + '|';
@@ -28,5 +33,9 @@ export class LoopbackComponent{
 
   onEnter(value: string) {
     this.value1 = value;
+  }
+
+  update(value: string) {
+    this.value2 = value;
   }
 }
