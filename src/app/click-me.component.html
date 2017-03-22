@@ -1,0 +1,11 @@
+<p>显示数据：插值-ngFor-ngIf</p>
+<h2>my favorite hero is: {{ myhero }}</h2><!--插值表达式-->
+<p>Heroes:</p>
+<ul>
+  <li *ngFor="let hero of testHeroes">{{ hero.detail }}</li>
+</ul>
+<p *ngIf="testHeroes.length > 3">There are many heroes!</p><!--将元素从DOM中添加或移除，而不是隐藏-->
+<p>绑定用户输入事件：</p>
+<button (click)="onClickMe()">click me!</button>
+{{ clickMessage }}
+<key-up></key-up>

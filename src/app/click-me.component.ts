@@ -5,17 +5,9 @@ import { Component } from '@angular/core';
 import {Hero1} from "./hero1";
 
 @Component({
+  moduleId: module.id,//使用模板文件时需要指定
   selector: 'click-me',
-  template: `
-    <h2>my favorite hero is: {{ myhero }}</h2><!--插值表达式-->
-     <p>Heroes:</p>
-    <ul>
-      <li *ngFor="let hero of testHeroes">{{ hero.detail }}</li>
-    </ul>
-    <p *ngIf="testHeroes.length > 3">There are many heroes!</p><!--将元素从DOM中添加或移除，而不是隐藏-->
-    <key-up></key-up>
-    <button (click)="onClickMe()">click me!</button>
-    {{ clickMessage }}`
+  templateUrl: 'click-me.component.html'
 })
 
 export class ClickMeComponent{
