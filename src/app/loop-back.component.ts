@@ -11,13 +11,22 @@ import { Component } from '@angular/core';
   <!--<p>{{ box.value }}</p>--><!--完全自包含-->
   <input #box (keyup)="onkey(box.value)">
   <p>{{ value }}</p>
+  
+  <p>按键事件过滤(通过key.enter)</p>
+  <input #box1 (keyup.enter)="onEnter(box1.value)">
+  <p>{{ value1 }}</p>
 `
 })
 
 export class LoopbackComponent{
   value = '';
+  value1 = '';
 
   onkey(value: string) {//组件从视图中获取了干净的数据值
     this.value += value + '|';
+  }
+
+  onEnter(value: string) {
+    this.value1 = value;
   }
 }
