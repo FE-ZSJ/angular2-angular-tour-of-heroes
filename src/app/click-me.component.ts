@@ -13,6 +13,7 @@ import {Hero1} from "./hero1";
       <li *ngFor="let hero of testHeroes">{{ hero.detail }}</li>
     </ul>
     <p *ngIf="testHeroes.length > 3">There are many heroes!</p><!--将元素从DOM中添加或移除，而不是隐藏-->
+    <key-up></key-up>
     <button (click)="onClickMe()">click me!</button>
     {{ clickMessage }}`
 })
