@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeroesComponent }  from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { DashBoardComponent } from './dashboard.component';
+import { ClickMeComponent } from "./click-me.component";
 
 const routes: Routes = [//将路由抽出到一个变量中
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -19,6 +20,9 @@ const routes: Routes = [//将路由抽出到一个变量中
   },
   { path: 'detail/:id',//带参数的路由,id是一个占位符
     component: HeroDetailComponent//英雄详情的路由配置
+  },
+  { path: 'clickMe',
+    component: ClickMeComponent
   },
 ];
 

@@ -24,6 +24,7 @@ var hero_detail_component_1 = require('./hero-detail.component');
 var dashboard_component_1 = require('./dashboard.component');
 var hero_search_component_1 = require('./hero-search.component');
 var hero_service_1 = require("./hero.service");
+var click_me_component_1 = require("./click-me.component");
 //标记为angular模块类(ngModule类)，接收元数据对象，告诉angular如何编译和启动应用
 var AppModule = (function () {
     function AppModule() {
@@ -43,7 +44,8 @@ var AppModule = (function () {
                 heroes_component_1.HeroesComponent,
                 hero_detail_component_1.HeroDetailComponent,
                 dashboard_component_1.DashBoardComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                click_me_component_1.ClickMeComponent
             ],
             // exports:[ AppComponent ],//declarations的子集，可用于其他模块的组件模板,此处不需要
             //服务的创建者，加入全局服务列表中，可用于应用的任何部分
