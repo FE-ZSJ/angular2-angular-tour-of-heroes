@@ -28,6 +28,7 @@ var click_me_component_1 = require("./click-me.component");
 var keyup_component_1 = require("./keyup.component");
 var loop_back_component_1 = require('./loop-back.component');
 var litter_tour_component_1 = require("./litter-tour.component");
+var hero_form_component_1 = require("./hero-form.component");
 //标记为angular模块类(ngModule类)，接收元数据对象，告诉angular如何编译和启动应用
 var AppModule = (function () {
     function AppModule() {
@@ -51,7 +52,8 @@ var AppModule = (function () {
                 click_me_component_1.ClickMeComponent,
                 keyup_component_1.KeyUpComponent_v1,
                 loop_back_component_1.LoopbackComponent,
-                litter_tour_component_1.LitterTourComponent
+                litter_tour_component_1.LitterTourComponent,
+                hero_form_component_1.HeroFormComponent
             ],
             // exports:[ AppComponent ],//declarations的子集，可用于其他模块的组件模板,此处不需要
             //服务的创建者，加入全局服务列表中，可用于应用的任何部分

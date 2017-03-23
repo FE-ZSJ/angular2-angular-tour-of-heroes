@@ -9,6 +9,7 @@ import { HeroesComponent }  from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { DashBoardComponent } from './dashboard.component';
 import { ClickMeComponent } from "./click-me.component";
+import {HeroFormComponent} from "./hero-form.component";
 
 const routes: Routes = [//将路由抽出到一个变量中
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -24,6 +25,9 @@ const routes: Routes = [//将路由抽出到一个变量中
   { path: 'clickMe',
     component: ClickMeComponent
   },
+  { path: 'heroForm',
+    component: HeroFormComponent
+  }
 ];
 
 @NgModule({

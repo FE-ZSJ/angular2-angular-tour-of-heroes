@@ -21,6 +21,7 @@ import { ClickMeComponent } from "./click-me.component";
 import { KeyUpComponent_v1 } from "./keyup.component";
 import { LoopbackComponent } from './loop-back.component';
 import {LitterTourComponent} from "./litter-tour.component";
+import {HeroFormComponent} from "./hero-form.component";
 
 //标记为angular模块类(ngModule类)，接收元数据对象，告诉angular如何编译和启动应用
 @NgModule({//装饰器负责把元数据装饰到类上，接收的是描述模块属性的元数据对象
@@ -41,7 +42,8 @@ import {LitterTourComponent} from "./litter-tour.component";
     ClickMeComponent,
     KeyUpComponent_v1,
     LoopbackComponent,
-    LitterTourComponent
+    LitterTourComponent,
+    HeroFormComponent
   ],
   // exports:[ AppComponent ],//declarations的子集，可用于其他模块的组件模板,此处不需要
   //服务的创建者，加入全局服务列表中，可用于应用的任何部分

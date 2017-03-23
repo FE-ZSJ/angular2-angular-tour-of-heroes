@@ -20,7 +20,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<!--\u5185\u8054\u6A21\u677F-->\n    <h1>{{ title }}</h1>\n    <nav>\n      <a routerLink=\"/dashboard\" routerLinkActive=\"active\">DashBoard</a>\n      <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a><!--\u8DEF\u7531\u5668\u94FE\u63A5-->\n      <a routerLink=\"/clickMe\" routerLinkActive=\"active\">ClickMe</a>\n    </nav>\n    <router-outlet></router-outlet><!--\u8DEF\u7531\u63D2\u5EA7\u2014\u2014\u628A\u6FC0\u6D3B\u7684\u7EC4\u4EF6\u663E\u793A\u5728\u6B64-->\n    <h5>author: {{ author }}</h5>\n  ",
+            template: "<!--\u5185\u8054\u6A21\u677F-->\n    <h1>{{ title }}</h1>\n    <nav>\n      <a routerLink=\"/dashboard\" routerLinkActive=\"active\">DashBoard</a>\n      <a routerLink=\"/heroes\" routerLinkActive=\"active\">Heroes</a><!--\u8DEF\u7531\u5668\u94FE\u63A5-->\n      <a routerLink=\"/clickMe\" routerLinkActive=\"active\">ClickMe</a>\n      <a routerLink=\"/heroForm\" routerLinkActive=\"active\">heroForm</a>\n    </nav>\n    <router-outlet></router-outlet><!--\u8DEF\u7531\u63D2\u5EA7\u2014\u2014\u628A\u6FC0\u6D3B\u7684\u7EC4\u4EF6\u663E\u793A\u5728\u6B64-->\n    <h5>author: {{ author }}</h5>\n  ",
             styleUrls: ['app/app.component.css']
         }), 
         __metadata('design:paramtypes', [])

@@ -11,6 +11,7 @@ import { Component } from '@angular/core';
       <a routerLink="/dashboard" routerLinkActive="active">DashBoard</a>
       <a routerLink="/heroes" routerLinkActive="active">Heroes</a><!--路由器链接-->
       <a routerLink="/clickMe" routerLinkActive="active">ClickMe</a>
+      <a routerLink="/heroForm" routerLinkActive="active">heroForm</a>
     </nav>
     <router-outlet></router-outlet><!--路由插座——把激活的组件显示在此-->
     <h5>author: {{ author }}</h5>
