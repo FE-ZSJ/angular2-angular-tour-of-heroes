@@ -1,14 +1,18 @@
 <div class="container">
   <h1>Hero Form</h1>
-  <form>
+  <form #heroForm="ngForm">
     {{ diagnostic }}
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" required
-             [(ngModel)]="model.name" name="name">
+             [(ngModel)]="model.name" name="name" #name="ngModel"><!--指令的 exportAs 属性告诉 Angular 如何链接模板引用变量到指令。-->
              <!--#spy>&lt;!&ndash;用name注册到表单中&ndash;&gt;-->
       <!--<br>TODO: remmove this: {{spy.className}}-->
       <!--TODO: remove this: {{model.name}}-->
+      <div [hidden]="name.valid || name.pristine"
+           class="alert alert-danger">
+        Name is required
+      </div>
     </div>
 
     <div class="form-group">
@@ -26,5 +30,6 @@
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>
+    <button type="button" class="btn btn-default" (click)="newHero();heroForm.reset()">New Hero</button><!--清除所有标记-->
   </form>
 </div>

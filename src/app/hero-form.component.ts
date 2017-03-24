@@ -21,4 +21,8 @@ export class HeroFormComponent{
   onSubmit() { this.submitted = true; }
 
   get diagnostic() { return JSON.stringify(this.model); }//返回模型的JSON格式
+
+  newHero() {
+    this.model = new HeroForm(17, '', '');
+  }
 }
